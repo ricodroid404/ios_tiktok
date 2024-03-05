@@ -28,76 +28,57 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="ios_BRAIN_PUMP_UP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="ios_TikTok_scroll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSi-J9-yPe">
-                                <rect key="frame" x="176" y="303" width="41.333333333333343" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-po-ikf">
-                                <rect key="frame" x="0.0" y="404" width="393" height="35"/>
-                                <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="はじめる"/>
-                                <connections>
-                                    <segue destination="7SO-5k-2Bp" kind="show" id="3hL-Uj-Tn5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-Ni-62h">
-                                <rect key="frame" x="0.0" y="584" width="393" height="35"/>
-                                <color key="backgroundColor" red="0.49019607840000001" green="0.75294117650000003" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="マイページ"/>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCD-e5-H7t">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nxG-Qe-O6Z"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="cb5-SL-90X"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nVd-Ni-62h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Ke-sw-pu2"/>
-                            <constraint firstItem="3Zk-po-ikf" firstAttribute="top" secondItem="gSi-J9-yPe" secondAttribute="bottom" constant="80.666666666666686" id="ATZ-t7-A4H"/>
-                            <constraint firstItem="gSi-J9-yPe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Avs-MR-bbQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nVd-Ni-62h" secondAttribute="trailing" id="GF3-ni-UuA"/>
-                            <constraint firstItem="3Zk-po-ikf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JL8-Z7-7DO"/>
-                            <constraint firstItem="nVd-Ni-62h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MFx-4c-ezw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Zk-po-ikf" secondAttribute="trailing" id="Nb3-wz-8mU"/>
-                            <constraint firstItem="nVd-Ni-62h" firstAttribute="top" secondItem="3Zk-po-ikf" secondAttribute="bottom" constant="145" id="PRg-vh-TJh"/>
-                            <constraint firstItem="3Zk-po-ikf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sHL-td-l3M"/>
-                            <constraint firstItem="gSi-J9-yPe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMS-x5-Fz0"/>
+                            <constraint firstItem="kCD-e5-H7t" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="39n-b7-rt0"/>
+                            <constraint firstAttribute="bottom" secondItem="kCD-e5-H7t" secondAttribute="bottom" id="3Ne-Kl-u18"/>
+                            <constraint firstItem="kCD-e5-H7t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b8R-Qr-nLo"/>
+                            <constraint firstItem="kCD-e5-H7t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t8H-ea-0cJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dnT-zV-8yz"/>
+                    <connections>
+                        <outlet property="scrollView" destination="kCD-e5-H7t" id="0Yy-P7-FSh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="4"/>
+            <point key="canvasLocation" x="96.946564885496173" y="3.5211267605633805"/>
         </scene>
         <!--Brain View Controller-->
         <scene sceneID="vMd-um-BcS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="7SO-5k-2Bp" userLabel="Brain View Controller" customClass="BrainViewController" customModule="ios_BRAIN_PUMP_UP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="7SO-5k-2Bp" userLabel="Brain View Controller" customClass="BrainViewController" customModule="ios_TikTok_scroll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9oe-MA-6cA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnK-o2-vOE">
-                                <rect key="frame" x="172.66666666666666" y="429" width="48" height="21"/>
+                                <rect key="frame" x="172.66666666666666" y="385" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="254-y1-oMD">
-                                <rect key="frame" x="172.33333333333334" y="586" width="48.666666666666657" height="31.333333333333371"/>
+                                <rect key="frame" x="172.33333333333334" y="542" width="48.666666666666657" height="31.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWH-kD-WdA">
-                                <rect key="frame" x="0.0" y="743.33333333333337" width="393" height="35"/>
+                                <rect key="frame" x="0.0" y="699.33333333333337" width="393" height="35"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="スタート"/>
@@ -106,10 +87,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="sGX-gB-G7p">
-                                <rect key="frame" x="50" y="133" width="293" height="240"/>
+                                <rect key="frame" x="50" y="89" width="293" height="240"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCp-4D-jLP">
-                                <rect key="frame" x="0.0" y="693.33333333333337" width="393" height="35"/>
+                                <rect key="frame" x="0.0" y="649.33333333333337" width="393" height="35"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.0" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="筋トレ終了"/>
@@ -118,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MZ-VS-bnK">
-                                <rect key="frame" x="0.0" y="799.33333333333337" width="393" height="35"/>
+                                <rect key="frame" x="0.0" y="755.33333333333337" width="393" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="休憩"/>

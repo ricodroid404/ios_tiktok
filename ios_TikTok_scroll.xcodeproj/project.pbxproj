@@ -44,7 +44,7 @@
 		1D9C25AF2B91C1A100D9C791 = {
 			isa = PBXGroup;
 			children = (
-				1D9C25BA2B91C1A100D9C791 /* ios_BRAIN_PUMP_UP */,
+				1D9C25BA2B91C1A100D9C791 /* ios_TikTok_scroll */,
 				1D9C25B92B91C1A100D9C791 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D9C25BA2B91C1A100D9C791 /* ios_BRAIN_PUMP_UP */ = {
+		1D9C25BA2B91C1A100D9C791 /* ios_TikTok_scroll */ = {
 			isa = PBXGroup;
 			children = (
 				1D9C25D72B91DF1400D9C791 /* util */,
@@ -70,7 +70,7 @@
 				1D9C25C62B91C1A200D9C791 /* LaunchScreen.storyboard */,
 				1D9C25C92B91C1A200D9C791 /* Info.plist */,
 			);
-			path = ios_BRAIN_PUMP_UP;
+			path = ios_TikTok_scroll;
 			sourceTree = "<group>";
 		};
 		1D9C25D72B91DF1400D9C791 /* util */ = {
@@ -310,7 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FC5G5LU4MJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ios_BRAIN_PUMP_UP/Info.plist;
+				INFOPLIST_FILE = ios_TikTok_scroll/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,7 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FC5G5LU4MJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ios_BRAIN_PUMP_UP/Info.plist;
+				INFOPLIST_FILE = ios_TikTok_scroll/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
