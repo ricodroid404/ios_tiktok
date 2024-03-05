@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D9C25B82B91C1A100D9C791 /* ios_BRAIN_PUMP_UP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_BRAIN_PUMP_UP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9C25B82B91C1A100D9C791 /* ios_TikTok_scroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_TikTok_scroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9C25BB2B91C1A100D9C791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9C25BD2B91C1A100D9C791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D9C25BF2B91C1A100D9C791 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		1D9C25B92B91C1A100D9C791 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D9C25B82B91C1A100D9C791 /* ios_BRAIN_PUMP_UP.app */,
+				1D9C25B82B91C1A100D9C791 /* ios_TikTok_scroll.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D9C25B72B91C1A100D9C791 /* ios_BRAIN_PUMP_UP */ = {
+		1D9C25B72B91C1A100D9C791 /* ios_TikTok_scroll */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D9C25CC2B91C1A200D9C791 /* Build configuration list for PBXNativeTarget "ios_BRAIN_PUMP_UP" */;
+			buildConfigurationList = 1D9C25CC2B91C1A200D9C791 /* Build configuration list for PBXNativeTarget "ios_TikTok_scroll" */;
 			buildPhases = (
 				1D9C25B42B91C1A100D9C791 /* Sources */,
 				1D9C25B52B91C1A100D9C791 /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = ios_BRAIN_PUMP_UP;
+			name = ios_TikTok_scroll;
 			productName = ios_BRAIN_PUMP_UP;
-			productReference = 1D9C25B82B91C1A100D9C791 /* ios_BRAIN_PUMP_UP.app */;
+			productReference = 1D9C25B82B91C1A100D9C791 /* ios_TikTok_scroll.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D9C25B32B91C1A100D9C791 /* Build configuration list for PBXProject "ios_BRAIN_PUMP_UP" */;
+			buildConfigurationList = 1D9C25B32B91C1A100D9C791 /* Build configuration list for PBXProject "ios_TikTok_scroll" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D9C25B72B91C1A100D9C791 /* ios_BRAIN_PUMP_UP */,
+				1D9C25B72B91C1A100D9C791 /* ios_TikTok_scroll */,
 			);
 		};
 /* End PBXProject section */
@@ -362,7 +362,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D9C25B32B91C1A100D9C791 /* Build configuration list for PBXProject "ios_BRAIN_PUMP_UP" */ = {
+		1D9C25B32B91C1A100D9C791 /* Build configuration list for PBXProject "ios_TikTok_scroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D9C25CA2B91C1A200D9C791 /* Debug */,
@@ -371,7 +371,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D9C25CC2B91C1A200D9C791 /* Build configuration list for PBXNativeTarget "ios_BRAIN_PUMP_UP" */ = {
+		1D9C25CC2B91C1A200D9C791 /* Build configuration list for PBXNativeTarget "ios_TikTok_scroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D9C25CD2B91C1A200D9C791 /* Debug */,

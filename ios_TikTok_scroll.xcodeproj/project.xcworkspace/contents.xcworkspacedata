@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/riko/study/ios_TikTok_scroll/ios_TikTok_scroll.xcodeproj">
    </FileRef>
 </Workspace>
