@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.delegate = self
+        
         var previousView: UIView?
         var downloadedVideoURLs: [URL] = []
         
@@ -41,9 +43,9 @@ class MainViewController: UIViewController {
             URL(string: "https://test-pvg-video-contents-bucket.s3.ap-northeast-1.amazonaws.com/pexels-cristian-rossa-20208157+(Original).mp4")!,
             URL(string: "https://test-pvg-video-contents-bucket.s3.ap-northeast-1.amazonaws.com/file_example_MP4_1920_18MG.mp4")!
         ]
-
+        
         let group = DispatchGroup()
-
+        
         for url in videoURLs {
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let destinationURL = documentsDirectory.appendingPathComponent(url.lastPathComponent)
@@ -75,7 +77,7 @@ class MainViewController: UIViewController {
             
             if downloadedVideoURLs.count == videoURLs.count {
                 print("すべての動画のダウンロードと保存が成功しました。")
-
+                
                 for videoURL in downloadedVideoURLs {
                     let playerItem = AVPlayerItem(url: videoURL)
                     let player = AVPlayer(playerItem: playerItem)
@@ -148,3 +150,28 @@ class MainViewController: UIViewController {
         }
     }
 }
+
+// ページスクロールを検知する
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            print("currentPage:", scrollView.currentPage)
+            print("contentSizeの確認1:", scrollView.contentSize)
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("currentPage:", scrollView.currentPage)
+        print("contentSizeの確認2:", scrollView.contentSize)
+    }
+}
+
+extension UIScrollView {
+    var currentPage: Int {
+        let pageWidth = self.bounds.width
+        let currentPage = Int((self.contentOffset.x + (0.5 * pageWidth)) / pageWidth)
+        
+        return currentPage + 1
+    }
+}
+
