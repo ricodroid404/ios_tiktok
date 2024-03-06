@@ -42,61 +42,72 @@ class MainViewController: UIViewController {
             URL(string: "https://test-pvg-video-contents-bucket.s3.ap-northeast-1.amazonaws.com/file_example_MP4_1920_18MG.mp4")!
         ]
 
+        let group = DispatchGroup()
+
         for url in videoURLs {
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let destinationURL = documentsDirectory.appendingPathComponent(url.lastPathComponent)
             
+            // グループに入る
+            group.enter()
+            
             // downloadVideoメソッドを呼び出す
             downloadVideo(fromURLs: videoURLs) { success in
+                defer {
+                    // グループから出る
+                    group.leave()
+                }
+                
                 if success {
-                    print("すべての動画のダウンロードと保存が成功しました。")
-                    
-                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                    
-                    for url in videoURLs {
-                        let destinationURL = documentsDirectory.appendingPathComponent(url.lastPathComponent)
-                        downloadedVideoURLs.append(destinationURL)
-                        print("ダウンロードされた動画のファイルパス: \(destinationURL)")
-                    }
-                           
+                    print("ダウンロード成功: \(destinationURL)")
+                    downloadedVideoURLs.append(destinationURL)
                 } else {
-                    print("少なくとも1つの動画のダウンロードまたは保存に失敗しました。")
+                    print("ダウンロード失敗: \(url)")
                 }
             }
         }
         
-        // 各動画を表示するAVPlayerViewControllerを作成して配置する
-       
-//        for videoURLString in videoURLs {
-//            guard let videoURL = URL(string: videoURLString) else {
-//                continue
-//            }
-//            
-//            let player = AVPlayer(url: videoURL)
-//            let playerViewController = AVPlayerViewController()
-//            playerViewController.player = player
-//            addChild(playerViewController)
-//            containerView.addSubview(playerViewController.view)
-//            playerViewController.view.translatesAutoresizingMaskIntoConstraints = false
-//            
-//            NSLayoutConstraint.activate([
-//                playerViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-//                playerViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-//                playerViewController.view.topAnchor.constraint(equalTo: previousView?.bottomAnchor ?? containerView.topAnchor),
-//                playerViewController.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-//                playerViewController.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
-//            ])
-//            
-//            playerViewController.didMove(toParent: self)
-//            player.play()
-//            
-//            previousView = playerViewController.view
-//        }
-//        
-//        // 最後の動画プレーヤーのbottomAnchorをcontainerViewのbottomAnchorに合わせる
-//        NSLayoutConstraint.activate([
-//            previousView!.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-//        ])
+        
+        // すべてのダウンロードが完了した時の処理
+        group.notify(queue: .main) {
+            // インジケーターを非表示にする
+            // ここでインジケーターを非表示にするコードを追加
+            
+            if downloadedVideoURLs.count == videoURLs.count {
+                print("すべての動画のダウンロードと保存が成功しました。")
+
+                for videoURL in downloadedVideoURLs {
+                    let playerItem = AVPlayerItem(url: videoURL)
+                    let player = AVPlayer(playerItem: playerItem)
+                    let playerViewController = AVPlayerViewController()
+                    playerViewController.player = player
+                    self.addChild(playerViewController)
+                    containerView.addSubview(playerViewController.view)
+                    playerViewController.view.translatesAutoresizingMaskIntoConstraints = false
+                    
+                    NSLayoutConstraint.activate([
+                        playerViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                        playerViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+                        playerViewController.view.topAnchor.constraint(equalTo: previousView?.bottomAnchor ?? containerView.topAnchor),
+                        playerViewController.view.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
+                        playerViewController.view.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
+                    ])
+                    
+                    playerViewController.didMove(toParent: self)
+                    player.play()
+                    
+                    previousView = playerViewController.view
+                }
+                
+                // 最後の動画プレーヤーのbottomAnchorをcontainerViewのbottomAnchorに合わせる
+                NSLayoutConstraint.activate([
+                    previousView!.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+                ])
+                
+            } else {
+                print("少なくとも1つの動画のダウンロードまたは保存に失敗しました。")
+            }
+        }
     }
     
     // 動画ダウンロード
